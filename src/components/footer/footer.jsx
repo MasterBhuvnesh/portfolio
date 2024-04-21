@@ -14,11 +14,11 @@ const Footer = () => {
             </a>
           </li>
 
-          <li>
+{/*           <li>
             <a href="#skills" className="footer_link">
               Skills
             </a>
-          </li>
+          </li> */}
 
           <li>
             <a href="#services" className="footer_link">
@@ -32,11 +32,11 @@ const Footer = () => {
             </a>
           </li>
 
-          <li>
+{/*           <li>
             <a href="#contact" className="footer_link">
               Contact
             </a>
-          </li>
+          </li> */}
         </ul>
 
         <div className="footer_social">

@@ -1,0 +1,13 @@
+.project_title {
+    text-align: center;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1-5);
+    color: var(--title-color);
+  }
+  
+  .project_img {
+    width: 250px;
+    border-radius: 1.5rem;
+    justify-self: center;
+  }

@@ -1,4 +1,5 @@
-{"homepage": "https://MasterBhuvnesh.github.io/portfolio",
+{
+  "homepage": "https://MasterBhuvnesh.github.io/portfolio",
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -41,5 +42,9 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
-  }
+  },
+  "description": "![image](https://github.com/MasterBhuvnesh/portfolio/assets/99537126/9fbd74c4-2c6e-40f8-b0e7-8e3a560223ab)",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

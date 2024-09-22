@@ -3,15 +3,16 @@ import React from "react";
 const Data = () => {
   return (
     <div className="home_data">
-      <h2 className="home_title">
-        Bhuvnesh Verma
-      </h2>
+      <h2 className="home_title">Bhuvnesh Verma</h2>
       <h3 className="home_subtitle"> Programmer</h3>
       <p className="home_description">
-        Hi there, my name is Bhuvnesh , a Programmer & developer passionate about technology
-        and changing people's lives through programming.
+        Hi there, my name is Bhuvnesh , a Programmer & developer passionate
+        about technology and changing people's lives through programming.
       </p>
-      <a href="#contact" className="button button--flex">
+      <a
+        href="#contact"
+        className="button button--flex"
+      >
         Say Hello
         <svg
           class="button_icon"

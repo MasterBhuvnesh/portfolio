@@ -29,10 +29,9 @@
   border-radius: 0.75rem;
   text-align: center;
 }
-.contact_card:hover{
+.contact_card:hover {
   box-shadow: 0px 4px 15px 2px rgb(232, 232, 232);
   border: 1px solid transparent;
-  
 }
 .contact_card-icon {
   font-size: 2rem;
@@ -42,7 +41,7 @@
 
 .contact_card-title,
 .contact_card-data {
-  font-weight: var(--font-medium);
+  font-weight: var(--font-small);
 }
 
 .contact_card-data {
@@ -141,7 +140,7 @@
     width: 100%;
   }
 
-  .contact_form.butto{
+  .contact_form.butto {
     display: flex;
     align-items: center;
     justify-content: center;

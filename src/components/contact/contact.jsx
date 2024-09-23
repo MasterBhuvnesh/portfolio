@@ -1,25 +1,56 @@
-import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useRef, useState } from "react";
 import "./contact.css";
 
 const Contact = () => {
   const form = useRef();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [text_p, setText] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_lne4vid",
-        "template_osu7n0c",
-        form.current,
-        "LGR-PTheaEtY-g2KA"
-      )
-      e.target.reset()
-      alert("tank's for the message !")
+    const emailData = {
+      name,
+      email,
+      text_p,
+    };
+
+    try {
+      const response = await fetch(
+        "https://mail-server-api-six.vercel.app/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(emailData),
+        }
+      );
+
+      if (response.ok) {
+        setStatusMessage("Thanks for the message!");
+        alert(statusMessage);
+        setName("");
+        setEmail("");
+        setText("");
+        form.current.reset();
+      } else {
+        setStatusMessage("Failed to send message.");
+        alert(statusMessage);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatusMessage("An error occurred. Please try again later.");
+    }
   };
+
   return (
-    <section className="contact section" id="contact">
+    <section
+      className="contact section"
+      id="contact"
+    >
       <h2 className="section_title">Get in touch</h2>
       <span className="section_subtitle">Contact Me</span>
 
@@ -32,14 +63,18 @@ const Contact = () => {
               <i className="bx bx-mail-send contact_card-icon"></i>
 
               <h3 className="contact_card-title">Email</h3>
-              <span className="contact_card-data">bhuvneshverma2904@gmail.com</span>
+              <span className="contact_card-data">
+                bhuvneshverma2904@gmail.com
+              </span>
 
-              <a href="mailto:bhuvneshverma2904@gmail.com" className="contact_button">
+              <a
+                href="mailto:bhuvneshverma2904@gmail.com"
+                className="contact_button"
+              >
                 Write me
                 <i className="bx bx-right-arrow-alt contact_button-icon"></i>
               </a>
             </div>
-
 
             <div className="contact_card">
               <i className="bx bxl-instagram contact_card-icon"></i>
@@ -61,9 +96,16 @@ const Contact = () => {
         <div className="contact_content">
           <h3 className="contact_title">Write me your project</h3>
 
-          <form ref={form} onSubmit={sendEmail} className="contact_form">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="contact_form"
+          >
             <div className="contact_form-div">
-              <label htmlFor="" className="contact_form-tag">
+              <label
+                htmlFor=""
+                className="contact_form-tag"
+              >
                 Name
               </label>
               <input
@@ -71,11 +113,17 @@ const Contact = () => {
                 name="name"
                 className="contact_form-input"
                 placeholder="Insert Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
               />
             </div>
 
             <div className="contact_form-div">
-              <label htmlFor="" className="contact_form-tag">
+              <label
+                htmlFor=""
+                className="contact_form-tag"
+              >
                 Email
               </label>
               <input
@@ -83,26 +131,34 @@ const Contact = () => {
                 name="email"
                 className="contact_form-input"
                 placeholder="Insert Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
 
             <div className="contact_form-div contact_form-area">
-              <label htmlFor="" className="contact_form-tag">
-                Name
+              <label
+                htmlFor=""
+                className="contact_form-tag"
+              >
+                Project
               </label>
               <textarea
                 name="project"
                 cols="30"
                 rows="10"
                 className="contact_form-input"
-                placeholder="Write your project"
+                placeholder="Write your project | feedback | msg"
+                value={text_p}
+                onChange={(e) => setText(e.target.value)}
+                required
               ></textarea>
             </div>
-
             <button className="button button--flex">
               Send Message
               <svg
-                class="button_icon"
+                className="button_icon"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"

@@ -9,7 +9,7 @@ import Testimonials from "./components/testimonials/testimonials";
 import Contact from "./components/contact/contact";
 import Footer from "./components/footer/footer";
 import Scrollup from "./components/scrollup/scrollup";
-import Project from './components/project/Project';
+import Project from "./components/project/Project";
 function App() {
   return (
     <>
@@ -19,7 +19,7 @@ function App() {
         <About />
         <Skills />
         <Services />
-        <Project/>
+        {/* <Project/> */}
         <Qualification />
         <Testimonials />
         <Contact />

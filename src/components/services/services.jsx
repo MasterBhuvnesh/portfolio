@@ -9,7 +9,10 @@ const Services = () => {
   };
 
   return (
-    <section className="services" id="services">
+    <section
+      className="services"
+      id="services"
+    >
       <h2 className="section_title">Services</h2>
       <span className="section_subtitle">What i offer</span>
 
@@ -22,7 +25,10 @@ const Services = () => {
             </h3>
           </div>
 
-          <span className="services_button" onClick={() => setToggleState(1)}>
+          <span
+            className="services_button"
+            onClick={() => setToggleState(1)}
+          >
             View More
             <i className="uil uil-arrow-right services_button-icon"></i>
           </span>
@@ -86,11 +92,14 @@ const Services = () => {
           <div>
             <i className="uil uil-arrow services_icon"></i>
             <h3 className="services_title">
-              Python <br /> Developer 
+              Python <br /> Developer
             </h3>
           </div>
 
-          <span className="services_button" onClick={() => setToggleState(2)}>
+          <span
+            className="services_button"
+            onClick={() => setToggleState(2)}
+          >
             View More
             <i className="uil uil-arrow-right services_button-icon"></i>
           </span>
@@ -115,30 +124,22 @@ const Services = () => {
               <ul className="services_modal-services grid">
                 <li className="services_modal-service">
                   <i className="uil uil-check-circle services_modal-icon"></i>
-                  <p className="services_modal-info">
-                    Scalable Applications.
-                  </p>
+                  <p className="services_modal-info">Scalable Applications.</p>
                 </li>
 
                 <li className="services_modal-service">
                   <i className="uil uil-check-circle services_modal-icon"></i>
-                  <p className="services_modal-info">
-                    Customized Sollutions.
-                     </p>
+                  <p className="services_modal-info">Customized Sollutions.</p>
                 </li>
 
                 <li className="services_modal-service">
                   <i className="uil uil-check-circle services_modal-icon"></i>
-                  <p className="services_modal-info">
-                    Optimized Performance.
-                  </p>
+                  <p className="services_modal-info">Optimized Performance.</p>
                 </li>
 
                 <li className="services_modal-service">
                   <i className="uil uil-check-circle services_modal-icon"></i>
-                  <p className="services_modal-info">
-                    Seamless Integrations.
-                  </p>
+                  <p className="services_modal-info">Seamless Integrations.</p>
                 </li>
 
                 <li className="services_modal-service">
@@ -156,11 +157,14 @@ const Services = () => {
           <div>
             <i className="uil uil-edit services_icon"></i>
             <h3 className="services_title">
-            Artificial <br /> Intelligence
+              Analytical <br /> Innovator
             </h3>
           </div>
 
-          <span className="services_button" onClick={() => setToggleState(3)}>
+          <span
+            className="services_button"
+            onClick={() => setToggleState(3)}
+          >
             View More
             <i className="uil uil-arrow-right services_button-icon"></i>
           </span>
@@ -179,7 +183,8 @@ const Services = () => {
 
               <h3 className="services_modal-title">AI Developer</h3>
               <p className="services_modal-description">
-              These qualities, combined with passion, curiosity, and a collaborative mindset, will help companies.
+                These qualities, combined with passion, curiosity, and a
+                collaborative mindset, will help companies.
               </p>
 
               <ul className="services_modal-services grid">
@@ -193,7 +198,8 @@ const Services = () => {
                 <li className="services_modal-service">
                   <i className="uil uil-check-circle services_modal-icon"></i>
                   <p className="services_modal-info">
-                    Proficiency in Programming.</p>
+                    Proficiency in Programming.
+                  </p>
                 </li>
 
                 <li className="services_modal-service">
@@ -205,9 +211,7 @@ const Services = () => {
 
                 <li className="services_modal-service">
                   <i className="uil uil-check-circle services_modal-icon"></i>
-                  <p className="services_modal-info">
-                    Domain Knowledge
-                  </p>
+                  <p className="services_modal-info">Domain Knowledge</p>
                 </li>
 
                 <li className="services_modal-service">

@@ -19,7 +19,7 @@ const Contact = () => {
 
     try {
     //  const response = await fetch(
-        "https://mail-server-api-six.vercel.app/send-email",
+        // "https://mail-server-api-six.vercel.app/send-email",
 
         {
           method: "POST",

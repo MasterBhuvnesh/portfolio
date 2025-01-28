@@ -1,5 +1,10 @@
 import React, { useRef, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
 import "./contact.css";
+
+const supabaseUrl = "https://mhdtzteumvqchhkmjcai.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oZHR6dGV1bXZxY2hoa21qY2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU2NjM5NzIsImV4cCI6MjA1MTIzOTk3Mn0._yV22rXxT5wPh1Arvdo90FnnpqCoWqVPGDZl5DpgWIE";
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Contact = () => {
   const form = useRef();
@@ -11,47 +16,40 @@ const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
 
-    const emailData = {
+    const formData = {
       name,
       email,
-      text_p,
+      text: text_p, // Ensure this matches your Supabase table column name
     };
 
     try {
-      const response = await fetch(
-         "https://mail-server-api-six.vercel.app/send-email",
+      // Insert data into Supabase table
+      const { data, error } = await supabase
+        .from("portfolioform") // Replace with your table name
+        .insert([formData]);
 
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(emailData),
-        }
-      );
-
-      if (response.ok) {
-        setStatusMessage("Thanks for the message!");
-        alert(statusMessage);
-        setName("");
-        setEmail("");
-        setText("");
-        form.current.reset();
-      } else {
-        setStatusMessage("Failed to send message.");
-        alert(statusMessage);
+      if (error) {
+        throw error;
       }
+
+      // Success message
+      setStatusMessage("Thanks for the message! Your data has been saved.");
+      alert(statusMessage);
+
+      // Reset form fields
+      setName("");
+      setEmail("");
+      setText("");
+      form.current.reset();
     } catch (error) {
-      console.error("Error:", error);
-      setStatusMessage("An error occurred. Please try again later.");
+      console.error("Error inserting data:", error);
+      setStatusMessage("Failed to save your message. Please try again later.");
+      alert(statusMessage);
     }
   };
 
   return (
-    <section
-      className="contact section"
-      id="contact"
-    >
+    <section className="contact section" id="contact">
       <h2 className="section_title">Get in touch</h2>
       <span className="section_subtitle">Contact Me</span>
 
@@ -97,16 +95,9 @@ const Contact = () => {
         <div className="contact_content">
           <h3 className="contact_title">Write me your project</h3>
 
-          <form
-            ref={form}
-            onSubmit={sendEmail}
-            className="contact_form"
-          >
+          <form ref={form} onSubmit={sendEmail} className="contact_form">
             <div className="contact_form-div">
-              <label
-                htmlFor=""
-                className="contact_form-tag"
-              >
+              <label htmlFor="" className="contact_form-tag">
                 Name
               </label>
               <input
@@ -121,10 +112,7 @@ const Contact = () => {
             </div>
 
             <div className="contact_form-div">
-              <label
-                htmlFor=""
-                className="contact_form-tag"
-              >
+              <label htmlFor="" className="contact_form-tag">
                 Email
               </label>
               <input
@@ -139,10 +127,7 @@ const Contact = () => {
             </div>
 
             <div className="contact_form-div contact_form-area">
-              <label
-                htmlFor=""
-                className="contact_form-tag"
-              >
+              <label htmlFor="" className="contact_form-tag">
                 Project
               </label>
               <textarea

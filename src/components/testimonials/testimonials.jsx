@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "./testimonials.css";
 import { Data } from "./data";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -33,8 +33,15 @@ const Testimonials = () => {
       >
         {Data.map(({ id, image, title, description }) => {
           return (
-            <SwiperSlide className="testimonial_card" key={id}>
-              <img src={image} alt="" className="testimonial_img" />
+            <SwiperSlide
+              className="testimonial_card"
+              key={id}
+            >
+              <img
+                src={image}
+                alt=""
+                className="testimonial_img"
+              />
 
               <h3 className="testimonial_name">{title}</h3>
               <p className="testimonial_description">{description}</p>

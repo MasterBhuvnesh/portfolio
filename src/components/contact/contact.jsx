@@ -1,9 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import "./contact.css";
 
 const supabaseUrl = "https://mhdtzteumvqchhkmjcai.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oZHR6dGV1bXZxY2hoa21qY2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU2NjM5NzIsImV4cCI6MjA1MTIzOTk3Mn0._yV22rXxT5wPh1Arvdo90FnnpqCoWqVPGDZl5DpgWIE";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oZHR6dGV1bXZxY2hoa21qY2FpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU2NjM5NzIsImV4cCI6MjA1MTIzOTk3Mn0._yV22rXxT5wPh1Arvdo90FnnpqCoWqVPGDZl5DpgWIE";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Contact = () => {
@@ -11,7 +13,6 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text_p, setText] = useState("");
-  const [statusMessage, setStatusMessage] = useState("");
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -33,8 +34,7 @@ const Contact = () => {
       }
 
       // Success message
-      setStatusMessage("Thanks for the message! Your data has been saved.");
-      alert(statusMessage);
+      alert("Thanks for the message! Your data has been saved.");
 
       // Reset form fields
       setName("");
@@ -43,13 +43,15 @@ const Contact = () => {
       form.current.reset();
     } catch (error) {
       console.error("Error inserting data:", error);
-      setStatusMessage("Failed to save your message. Please try again later.");
-      alert(statusMessage);
+      alert("Failed to save your message. Please try again later.");
     }
   };
 
   return (
-    <section className="contact section" id="contact">
+    <section
+      className="contact section"
+      id="contact"
+    >
       <h2 className="section_title">Get in touch</h2>
       <span className="section_subtitle">Contact Me</span>
 
@@ -79,10 +81,10 @@ const Contact = () => {
               <i className="bx bxl-instagram contact_card-icon"></i>
 
               <h3 className="contact_card-title">Instagram</h3>
-              <span className="contact_card-data">@verma_bhuvnesh_2904</span>
+              <span className="contact_card-data">@vermaji_2904</span>
 
               <a
-                href="https://www.instagram.com/verma_bhuvnesh_2904/"
+                href="https://www.instagram.com/vermaji_2904/"
                 className="contact_button"
               >
                 Write me
@@ -95,9 +97,16 @@ const Contact = () => {
         <div className="contact_content">
           <h3 className="contact_title">Write me your project</h3>
 
-          <form ref={form} onSubmit={sendEmail} className="contact_form">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="contact_form"
+          >
             <div className="contact_form-div">
-              <label htmlFor="" className="contact_form-tag">
+              <label
+                htmlFor=""
+                className="contact_form-tag"
+              >
                 Name
               </label>
               <input
@@ -112,7 +121,10 @@ const Contact = () => {
             </div>
 
             <div className="contact_form-div">
-              <label htmlFor="" className="contact_form-tag">
+              <label
+                htmlFor=""
+                className="contact_form-tag"
+              >
                 Email
               </label>
               <input
@@ -127,7 +139,10 @@ const Contact = () => {
             </div>
 
             <div className="contact_form-div contact_form-area">
-              <label htmlFor="" className="contact_form-tag">
+              <label
+                htmlFor=""
+                className="contact_form-tag"
+              >
                 Project
               </label>
               <textarea

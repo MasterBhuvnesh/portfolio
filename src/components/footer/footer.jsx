@@ -9,30 +9,39 @@ const Footer = () => {
 
         <ul className="footer_list">
           <li>
-            <a href="#about" className="footer_link">
+            <a
+              href="#about"
+              className="footer_link"
+            >
               About
             </a>
           </li>
 
-{/*           <li>
+          {/*           <li>
             <a href="#skills" className="footer_link">
               Skills
             </a>
           </li> */}
 
           <li>
-            <a href="#services" className="footer_link">
+            <a
+              href="#services"
+              className="footer_link"
+            >
               Services
             </a>
           </li>
 
           <li>
-            <a href="#project" className="footer_link">
+            <a
+              href="#project"
+              className="footer_link"
+            >
               Projects
             </a>
           </li>
 
-{/*           <li>
+          {/*           <li>
             <a href="#contact" className="footer_link">
               Contact
             </a>
@@ -41,9 +50,10 @@ const Footer = () => {
 
         <div className="footer_social">
           <a
-            href="https://www.instagram.com/verma_bhuvnesh_2904/"
+            href="https://www.instagram.com/vermaji_2904/"
             className="footer_social-link"
             target="_blank"
+            rel="noreferrer"
           >
             <i class="bx bxl-instagram"></i>
           </a>
@@ -52,6 +62,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/bhuvneshverma/"
             className="footer_social-link"
             target="_blank"
+            rel="noreferrer"
           >
             <i class="bx bxl-linkedin"></i>
           </a>
@@ -60,6 +71,7 @@ const Footer = () => {
             href="https://github.com/MasterBhuvnesh/"
             className="footer_social-link"
             target="_blank"
+            rel="noreferrer"
           >
             <i class="bx bxl-github"></i>
           </a>

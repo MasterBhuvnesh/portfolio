@@ -49,8 +49,10 @@ const Qualification = () => {
           >
             <div className="qualification_data">
               <div>
-              <h3 className="qualification_title">Programming Languages</h3>
-                <span className="qualification_subtitle">Programiz & W3School</span>
+                <h3 className="qualification_title">Programming Languages</h3>
+                <span className="qualification_subtitle">
+                  Programiz & W3School
+                </span>
                 <div className="qualification_calendar">
                   <i className="uil uil-calendar-alt"></i> 2021 - 2023
                 </div>
@@ -69,9 +71,9 @@ const Qualification = () => {
                 <span className="qualification_line"></span>
               </div>
               <div>
-              <h3 className="qualification_title">Cloud Networking</h3>
+                <h3 className="qualification_title">Cloud Networking</h3>
                 <span className="qualification_subtitle">
-                Amazon Web Services 
+                  Amazon Web Services
                 </span>
                 <div className="qualification_calendar">
                   <i className="uil uil-calendar-alt"></i> 2023 - Present
@@ -83,7 +85,7 @@ const Qualification = () => {
               <div>
                 <h3 className="qualification_title">Data Structure & OS </h3>
                 <span className="qualification_subtitle">
-                Online learning platforms and resources.
+                  Online learning platforms and resources.
                 </span>
                 <div className="qualification_calendar">
                   <i className="uil uil-calendar-alt"></i> 2023 - Present
@@ -103,7 +105,10 @@ const Qualification = () => {
                 {/* <span className="qualification_line"></span> */}
               </div>
               <div>
-                <h3 className="qualification_title"> Artificial Intelligence</h3>
+                <h3 className="qualification_title">
+                  {" "}
+                  Artificial Intelligence
+                </h3>
                 <span className="qualification_subtitle">
                   Coursera & other learning platforms
                 </span>
@@ -121,10 +126,12 @@ const Qualification = () => {
                 : "qualification_content"
             }
           >
-                        <div className="qualification_data">
+            <div className="qualification_data">
               <div>
-              <h3 className="qualification_title">Competitive events</h3>
-                <span className="qualification_subtitle">Hackathons and coding competitions</span>
+                <h3 className="qualification_title">Competitive events</h3>
+                <span className="qualification_subtitle">
+                  Hackathons and coding competitions
+                </span>
                 <div className="qualification_calendar">
                   <i className="uil uil-calendar-alt"></i> 2022 - present
                 </div>
@@ -143,10 +150,8 @@ const Qualification = () => {
                 <span className="qualification_line"></span>
               </div>
               <div>
-              <h3 className="qualification_title">Python Developer</h3>
-                <span className="qualification_subtitle">
-                As a Intern
-                </span>
+                <h3 className="qualification_title">Python Developer</h3>
+                <span className="qualification_subtitle">As a Intern</span>
                 <div className="qualification_calendar">
                   <i className="uil uil-calendar-alt"></i> May 2023 - July 2023
                 </div>
@@ -155,9 +160,9 @@ const Qualification = () => {
 
             <div className="qualification_data">
               <div>
-                <h3 className="qualification_title">Educator / Instructor</h3>
+                <h3 className="qualification_title">Freelancer </h3>
                 <span className="qualification_subtitle">
-                taught programming to several Pupil / Scholar
+                  Delving into new technologies and engaging in project work
                 </span>
                 <div className="qualification_calendar">
                   <i className="uil uil-calendar-alt"></i> 2023 - Present
